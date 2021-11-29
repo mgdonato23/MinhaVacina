@@ -1,26 +1,52 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { UsuarioModel } from 'src/app/models/usuario-model';
+import { CadastroUsuarioService } from 'src/app/services/cadastro-usuario.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  form!: FormGroup
+  form: FormGroup;
+  usuario!: UsuarioModel;
 
-  constructor() {
-    this.form = new FormGroup({
-      Email: new FormControl('', [Validators.required, Validators.email]),
-      Nome: new FormControl('', [Validators.required, Validators.minLength(20)]),
-      CPF: new FormControl('', [Validators.required, Validators.minLength(11)]),
-      DataNascimento: new FormControl('', [Validators.required]),
-      Endereco: new FormControl('', [Validators.required, Validators.minLength(20)]),
+  constructor(
+    private fb: FormBuilder
+  ) {
+    this.form = this.fb.group({
+      Email: ['', Validators.required],
+      Nome: ['', Validators.required],
+      CPF: ['', Validators.required],
+      Data: ['', Validators.required],
+      Endereco: ['', Validators.required],
     });
   }
-  
-  ngOnInit() {
-  }
 
-  enviarCadastro() {}
+  ngOnInit() {}
+
+  enviarCadastro(): void {
+    this.form.updateValueAndValidity();
+    this.form.markAllAsTouched();
+
+    if (this.form.invalid) {
+      return;
+    }
+
+    const dadosRequisicao: UsuarioModel = {
+      Email: this.usuario.Email,
+      Nome: this.usuario.Nome,
+      CPF: this.usuario.CPF,
+      Data: this.usuario.Data,
+      Endereco: this.usuario.Endereco,
+      IDUsuario: this.usuario.IDUsuario,
+    };
+
+  }
 }

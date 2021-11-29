@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { IOkObjectResult } from '../models/requisicao.interface';
 import { UsuarioModel } from '../models/usuario-model';
 
 const URL_API = '';
@@ -11,11 +12,19 @@ const URL_API = '';
 export class CadastroUsuarioService {
   constructor(private httpClient: HttpClient) {}
 
-  getUss(): Observable<UsuarioModel[]> {
-    return this.httpClient.get<UsuarioModel[]>(URL_API);
+  getCadastros(): Observable<UsuarioModel> {
+    return this.httpClient.get<UsuarioModel>(URL_API);
   }
 
-  postUsuarios(usuario: UsuarioModel) {
-    return this.httpClient.post(URL_API, usuario);
+  putCadastros(body: UsuarioModel): Observable<IOkObjectResult<string>> {
+    return this.httpClient.put<IOkObjectResult<string>>(URL_API, body);
+  }
+
+  postCadastros(body: UsuarioModel): Observable<IOkObjectResult<string>> {
+    return this.httpClient.post<IOkObjectResult<string>>(URL_API, body);
+  }
+
+  deleteCadastro(item: UsuarioModel): Observable<IOkObjectResult<string>> {
+    return this.httpClient.delete<IOkObjectResult<string>>(URL_API + `/${item.IDUsuario}`);
   }
 }
