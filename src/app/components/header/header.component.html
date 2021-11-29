@@ -1,0 +1,40 @@
+<mat-toolbar class="header">
+  <img
+    class="image-header"
+    [routerLink]="['/home']"
+    routerLinkActive="-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    src="/assets/images/icon.png"
+  />
+  <span class="example-spacer"></span>
+  <span
+    class="link-text"
+    routerLink="home"
+    routerLinkActive="-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >HOME</span
+  >
+  <span
+    class="link-text"
+    routerLink="local"
+    routerLinkActive="-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >LOCAL</span
+  >
+  <span
+    class="link-text"
+    routerLink="vacina"
+    routerLinkActive="-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >VACINA</span
+  >
+  <span
+    class="link-text"
+    routerLink="sobre"
+    routerLinkActive="-active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >SOBRE</span
+  >
+</mat-toolbar>
+
+<router-outlet></router-outlet>

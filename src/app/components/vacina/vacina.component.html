@@ -1,0 +1,49 @@
+<div class="vacina">
+  <section class="introducao">
+    <div>
+      <h1>FIQUE POR DENTRO DAS NOSSAS PRINCIPAIS VACINAS</h1>
+    </div>
+  </section>
+  
+  <div class="card-container">
+    <mat-card class="card grid-6">
+      <img mat-card-image src="/assets/images/spu.png" alt="Sputinik V" />
+      <mat-card-content>
+        <p class="card-title">Sputink V</p>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="card grid-6">
+      <img mat-card-image src="/assets/images/ox.png" alt="AstraZeneca" />
+      <mat-card-content>
+        <p class="card-title">AstraZeneca</p>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="card grid-6">
+      <img mat-card-image src="/assets/images/pfiz.png" alt="Pfizer" />
+      <mat-card-content>
+        <p class="card-title">Pfizer</p>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card class="card grid-6">
+      <img mat-card-image src="/assets/images/coronavac.png" alt="CoronaVac" />
+      <mat-card-content>
+        <p class="card-title">CoronaVac</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <div class="container">
+    <button
+      class="button-card"
+      mat-raised-button
+      [routerLink]="['/home']"
+      routerLinkActive="-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      VACINE-SE JÁ!
+    </button>
+  </div>
+</div>

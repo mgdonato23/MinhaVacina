@@ -1,0 +1,25 @@
+<div class="home">
+  <section class="introducao">
+    <div>
+      <h1>CADASTRE-SE E RECEBA A DATA EM SEU E-MAIL</h1>
+    </div>
+  </section>
+
+  <section class="form">
+    <div class="container">
+      <div class="grid-4">
+        <form style="margin-top: 50px" [formGroup]="form">
+          <input matInput formControlName="Email" placeholder="E-mail:">
+          <input matInput formControlName="Nome" placeholder="Nome:">
+          <input matInput formControlName="CPF" placeholder="CPF:">
+          <input matInput formControlName="DataNascimento" placeholder="Data de Nascimento:">
+          <input matInput formControlName="Endereco" placeholder="Endereço:">	
+          <button class="btn" (click)="enviarCadastro()">Enviar</button>
+        </form>
+      </div>
+      <div class="grid-12">
+        <img src="/assets/images/form.png">
+      </div>
+    </div>
+  </section>
+</div>

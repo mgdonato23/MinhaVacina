@@ -1,0 +1,29 @@
+/* HEADER */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.header {
+  background: #000;
+}
+
+.image-header {
+  width: 10%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.link-text {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.link-text:hover {
+  color: #fec63e;
+}

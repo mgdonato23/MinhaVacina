@@ -1,0 +1,61 @@
+/* CARD DE VACINAS */
+.vacina {
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+}
+
+.introducao {
+  height: 200px;
+  background: url("/assets/images/vac-h.png") no-repeat center;
+  background-size: cover;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.introducao h1 {
+  font-size: 35px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #000;
+}
+
+.card-container {
+  width: 1300px; 
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  max-width: 300px;
+  background: #000;
+  border-radius: 0;
+}
+
+.card-title {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 17px;
+}
+
+.button-card {
+  padding: 5px 15px;
+  border-radius: 10px;
+  background: #fec63e;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin-top: 30px;
+  margin-left: 150px;
+  margin-left: 400px;
+  cursor: pointer;
+}
+
+.button-card:hover {
+  color: #fff;
+}
