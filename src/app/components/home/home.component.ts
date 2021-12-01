@@ -19,7 +19,10 @@ export class HomeComponent implements OnInit {
     private cadastroUsuariosService: CadastroUsuariosService
   ) {
     this.form = new FormGroup({
-      Email: new FormControl('', [Validators.required, Validators.email]),
+      Email: new FormControl('', [
+        Validators.required, 
+        Validators.email
+      ]),
       Nome: new FormControl('', [
         Validators.required,
         Validators.minLength(10),
