@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IOkObjectResult } from '../models/requisicao.interface';
 import { UsuarioModel } from '../models/usuario-model';
 
-const URL_API = '';
+const URL_API = 'http://localhost:3000/usuario';
 
 @Injectable({
   providedIn: 'root',
@@ -16,17 +15,15 @@ export class CadastroUsuariosService {
     return this.httpClient.get<UsuarioModel>(URL_API);
   }
 
-  putCadastros(body: UsuarioModel): Observable<IOkObjectResult<string>> {
-    return this.httpClient.put<IOkObjectResult<string>>(URL_API, body);
+  putCadastro(body: UsuarioModel): Observable<UsuarioModel> {
+    return this.httpClient.put<UsuarioModel>(URL_API, body);
   }
 
-  postCadastros(body: UsuarioModel): Observable<IOkObjectResult<string>> {
-    return this.httpClient.post<IOkObjectResult<string>>(URL_API, body);
+  postCadastro(body: UsuarioModel): Observable<UsuarioModel> {
+    return this.httpClient.post<UsuarioModel>(URL_API, body.IDUsuario);
   }
 
-  deleteCadastro(item: UsuarioModel): Observable<IOkObjectResult<string>> {
-    return this.httpClient.delete<IOkObjectResult<string>>(
-      URL_API + `/${item.IDUsuario}`
-    );
+  deleteCadastro(idUsuario: UsuarioModel): Observable<UsuarioModel> {
+    return this.httpClient.delete<UsuarioModel>(URL_API + `/${idUsuario.IDUsuario}`);
   }
 }
