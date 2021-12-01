@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { UsuarioModel } from 'src/app/models/usuario-model';
-import { CadastroUsuarioService } from 'src/app/services/cadastro-usuario.service';
+import { CadastroUsuariosService } from 'src/app/services/cadastro-usuarios.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
   usuario!: UsuarioModel;
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private cadastroUsuariosService: CadastroUsuariosService
   ) {
     this.form = this.fb.group({
       Email: ['', Validators.required],
@@ -48,5 +49,6 @@ export class HomeComponent implements OnInit {
       IDUsuario: this.usuario.IDUsuario,
     };
 
+    this.cadastroUsuariosService.postCadastros(dadosRequisicao);
   }
 }

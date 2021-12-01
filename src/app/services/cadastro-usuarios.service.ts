@@ -9,7 +9,7 @@ const URL_API = '';
 @Injectable({
   providedIn: 'root',
 })
-export class CadastroUsuarioService {
+export class CadastroUsuariosService {
   constructor(private httpClient: HttpClient) {}
 
   getCadastros(): Observable<UsuarioModel> {
@@ -25,6 +25,8 @@ export class CadastroUsuarioService {
   }
 
   deleteCadastro(item: UsuarioModel): Observable<IOkObjectResult<string>> {
-    return this.httpClient.delete<IOkObjectResult<string>>(URL_API + `/${item.IDUsuario}`);
+    return this.httpClient.delete<IOkObjectResult<string>>(
+      URL_API + `/${item.IDUsuario}`
+    );
   }
 }
