@@ -8,13 +8,13 @@
   <section class="form">
     <div class="container">
       <div class="grid-4">
-        <form style="margin-top: 50px" [formGroup]="form">
-          <input matInput formControlName="Email" placeholder="E-mail:">
-          <input matInput formControlName="Nome" placeholder="Nome:">
-          <input matInput formControlName="CPF" placeholder="CPF:">
-          <input matInput formControlName="DataNascimento" placeholder="Data de Nascimento:">
-          <input matInput formControlName="Endereco" placeholder="Endereço:">	
-          <button class="btn" (click)="salvarRegistro()">Enviar</button>
+        <form style="margin-top: 50px" [formGroup]="form" (submit)="salvarRegistro()">
+          <input formControlName="Email" placeholder="E-mail:">
+          <input formControlName="Nome" placeholder="Nome:">
+          <input formControlName="CPF" placeholder="CPF:">
+          <input formControlName="DataNascimento" placeholder="Data de Nascimento:">
+          <input formControlName="Endereco" placeholder="Endereço:">	
+          <button class="btn">Enviar</button>
         </form>
       </div>
       <div class="grid-12">

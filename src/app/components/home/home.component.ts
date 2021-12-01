@@ -5,9 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import {
-  UsuarioModel
-} from 'src/app/models/usuario-model';
+import { UsuarioModel } from 'src/app/models/usuario-model';
 import { CadastroUsuariosService } from 'src/app/services/cadastro-usuarios.service';
 
 @Component({
@@ -16,7 +14,6 @@ import { CadastroUsuariosService } from 'src/app/services/cadastro-usuarios.serv
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  registro?: UsuarioModel;
   form: FormGroup;
 
   constructor(
@@ -32,11 +29,22 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   salvarRegistro(): void {
-    
+    const dadosRequisicao: UsuarioModel = {
+      Email: this.form.value.Email,
+      Nome: this.form.value.Nome,
+      CPF: this.form.value.CPF,
+      Endereco: this.form.value.Endereco,
+      DataNascimento: this.form.value.DataNascimento,
+      id: this.form.value.id,
+    };
+
+    this.cadastroUsuariosService
+      .postCadastro(dadosRequisicao)
+      .subscribe((dados) => {
+        console.log(dados);
+      });
   }
 }

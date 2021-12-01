@@ -1,5 +1,5 @@
 export interface UsuarioModel {
-  IDUsuario: number;
+  id?: number;
   Email: String;
   Nome: String;
   CPF: String;

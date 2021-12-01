@@ -20,6 +20,7 @@ import { LocalComponent } from './components/local/local.component';
 import { VacinaComponent } from './components/vacina/vacina.component';
 import { SobreComponent } from './components/sobre/sobre.component';
 import { CadastroUsuariosService } from './services/cadastro-usuarios.service';
+import { UtilsService } from './services/utils.service';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { CadastroUsuariosService } from './services/cadastro-usuarios.service';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [HttpClientModule, CadastroUsuariosService],
+  providers: [HttpClientModule, CadastroUsuariosService, UtilsService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
