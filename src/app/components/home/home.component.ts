@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormBuilder,
   FormControl,
   FormGroup,
   Validators,
@@ -17,7 +16,6 @@ export class HomeComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
     private cadastroUsuariosService: CadastroUsuariosService
   ) {
     this.form = new FormGroup({
